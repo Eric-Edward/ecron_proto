@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package task_service;
+
+option go_package = "github.cpm/Eric-Edward/ecron_proto/task";
+
+
+
+service TaskService {
+  rpc CreateTask (CreateTaskRequest) returns (CreateTaskResponse) {}
+  rpc GetTask (GetTaskRequest) returns (GetTaskResponse) {}
+  rpc UpdateTask (UpdateTaskRequest) returns (UpdateTaskResponse) {}
+  rpc DeleteTask (DeleteTaskRequest) returns (DeleteTaskResponse) {}
+  rpc ListTasks (ListTasksRequest) returns (ListTasksResponse) {}
+}
+
+message Task {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string cron = 4;
+  string command = 5;
+  string status = 6;
+}
+
+message Response {
+  int64 code = 1;
+  string error = 2;
+}
+
+message CreateTaskRequest {
+  string name = 2;
+  string description = 3;
+  string cron = 4;
+  string command = 5;
+  string status = 6;
+}
+
+message CreateTaskResponse {
+  Response resp = 1;
+}
+
+message GetTaskRequest {
+  string id = 1;
+}
+
+message GetTaskResponse {
+  Task task = 1;
+}
+
+message UpdateTaskRequest {
+  Task task = 1;
+}
+
+message UpdateTaskResponse {
+  Response resp = 1;
+}
+
+message DeleteTaskRequest {
+  string id = 1;
+}
+
+message DeleteTaskResponse {
+  Response resp = 1;
+}
+
+message ListTasksRequest {
+  string name = 1;
+  string description = 2;
+  string cron = 3;
+  string command = 4;
+  string status = 5;
+  int64  page = 6;
+  int64  limit = 7;
+}
+
+message ListTasksResponse {
+  Response resp = 1;
+  repeated Task tasks = 2;
+  int64  total = 3;
+}
