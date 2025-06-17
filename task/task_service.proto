@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package task_service;
+package task;
 
-option go_package = "github.com/Eric-Edward/ecron_proto/task/task_service";
+option go_package = "github.com/Eric-Edward/ecron_proto/task";
 
 
 
