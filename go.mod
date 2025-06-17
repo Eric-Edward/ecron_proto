@@ -1,4 +1,4 @@
-module ecron_proto
+module github.com/Eric-Edward/ecron_proto
 
 go 1.24
 
