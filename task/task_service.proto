@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package task_service;
 
-option go_package = "github.cpm/Eric-Edward/ecron_proto/task";
+option go_package = "github.cpm/Eric-Edward/ecron_proto/task/task_service";
 
 
 
@@ -23,11 +23,6 @@ message Task {
   string status = 6;
 }
 
-message Response {
-  int64 code = 1;
-  string error = 2;
-}
-
 message CreateTaskRequest {
   string name = 2;
   string description = 3;
@@ -37,7 +32,7 @@ message CreateTaskRequest {
 }
 
 message CreateTaskResponse {
-  Response resp = 1;
+  int64 id = 1;
 }
 
 message GetTaskRequest {
@@ -53,7 +48,7 @@ message UpdateTaskRequest {
 }
 
 message UpdateTaskResponse {
-  Response resp = 1;
+  int64 id = 1;
 }
 
 message DeleteTaskRequest {
@@ -61,7 +56,7 @@ message DeleteTaskRequest {
 }
 
 message DeleteTaskResponse {
-  Response resp = 1;
+  int64 id = 1;
 }
 
 message ListTasksRequest {
@@ -75,7 +70,6 @@ message ListTasksRequest {
 }
 
 message ListTasksResponse {
-  Response resp = 1;
-  repeated Task tasks = 2;
-  int64  total = 3;
+  repeated Task tasks = 1;
+  int64  total = 2;
 }
