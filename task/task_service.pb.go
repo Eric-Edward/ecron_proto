@@ -684,7 +684,7 @@ const file_task_service_proto_rawDesc = "" +
 	"UpdateTask\x12\x1f.task_service.UpdateTaskRequest\x1a .task_service.UpdateTaskResponse\"\x00\x12Q\n" +
 	"\n" +
 	"DeleteTask\x12\x1f.task_service.DeleteTaskRequest\x1a .task_service.DeleteTaskResponse\"\x00\x12N\n" +
-	"\tListTasks\x12\x1e.task_service.ListTasksRequest\x1a\x1f.task_service.ListTasksResponse\"\x00B6Z4github.cpm/Eric-Edward/ecron_proto/task/task_serviceb\x06proto3"
+	"\tListTasks\x12\x1e.task_service.ListTasksRequest\x1a\x1f.task_service.ListTasksResponse\"\x00B6Z4github.com/Eric-Edward/ecron_proto/task/task_serviceb\x06proto3"
 
 var (
 	file_task_service_proto_rawDescOnce sync.Once
